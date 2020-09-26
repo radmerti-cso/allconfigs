@@ -1,63 +1,74 @@
-// Platzieren Sie Ihre Einstellungen in dieser Datei, um die Standardeinstellungen zu überschreiben.
 {
+    // ------------------------------------------------------------------------
+    // Visual Studio Code: Window
+    // ------------------------------------------------------------------------
+    "window.zoomLevel": 0,
     // ------------------------------------------------------------------------
     // Visual Studio Code: Editor
     // ------------------------------------------------------------------------
-    // Controls the font family.
-    "editor.fontFamily": "'Fira Code'",
-    // Controls the font size in pixels.
+    "editor.fontFamily": "FiraCode-Retina",
     "editor.fontSize": 13,
-    // Controls the font weight.
     "editor.fontWeight": "400",
-    // Enables font ligatures
     "editor.fontLigatures": true,
-    // Steuert die Zeilenhöhe. Verwenden Sie 0, um LineHeight aus der FontSize-Angabe zu berechnen.
-    "editor.lineHeight": 0,  // 0==20sc
-    // Spalten, an denen vertikale Lineale angezeigt werden sollen
-    "editor.rulers": [68, 79],
-    // Steuert den Cursoranimationsstil. Gültige Werte sind "blink", "smooth", "phase", "expand" und "solid".
-    "editor.cursorBlinking": "blink",
-    // Steuert den Cursorstil. Gültige Werte sind  "block", "block-outline", "line", "line-thin", "underline" und "underline-thin".
+    "editor.lineHeight": 0, // 0==20sc
+    "editor.rulers": [
+        85,
+        100
+    ],
+    "editor.cursorBlinking": "solid",
     "editor.cursorStyle": "line",
-    // Steuert die Breite des Cursors, falls editor.cursorStyle auf "line" gestellt ist.
     "editor.cursorWidth": 2,
-    // Steuert, ob der Editor Einzugsführungslinien rendern soll.
+    "editor.cursorSmoothCaretAnimation": true,
+    "editor.cursorSurroundingLines": 2,
+    "editor.cursorSurroundingLinesStyle": "all",
     "editor.renderIndentGuides": true,
-    // Steuert, ob die Minikarte angezeigt wird
-    "editor.minimap.enabled": false,
-    // Die tatsächlichen Zeichen in einer Zeile rendern (im Gegensatz zu Farbblöcken)
+    "editor.minimap.enabled": true,
     "editor.minimap.renderCharacters": false,
-    // Breite der Minikarte beschränken, um höchstens eine bestimmte Anzahl von Spalten zu rendern
     "editor.minimap.maxColumn": 100,
-    // Steuert, ob der Minimap-Schieberegler automatisch ausgeblendet wird. Mögliche Werte sind "always" und "mouseover".
     "editor.minimap.showSlider": "always",
-    // Steuert, ob die Falt-Steuerelemente an der Leiste automatisch ausgeblendet werden.
     "editor.showFoldingControls": "mouseover",
-    // Steuert, ob der Explorer um Bestätigung bitten soll, wenn Sie eine Datei über den Papierkorb löschen.
+    "editor.formatOnSave": true,
+    // ------------------------------------------------------------------------
+    // Visual Studio Code: Explorer
+    // ------------------------------------------------------------------------
+    "explorer.confirmDragAndDrop": false,
+    "editor.tabSize": 2,
     "explorer.confirmDelete": false,
-    // Steuert die Breite (px) der Diff-Dekorationen in der Liste (hinzugefügt und verändert).
-    "scm.diffDecorationsGutterWidth": 5,
-
     // ------------------------------------------------------------------------
     // Visual Studio Code: Workbench
     // ------------------------------------------------------------------------
-    // Specifies the icon theme used in the workbench or 'null' to not show any file icons.
     "workbench.iconTheme": "material-icon-theme",
-    // Controls which editor is shown at startup, if none is restored from the previous session. Select 'none' to start without an editor, 'welcomePage' to open the Welcome page (default), 'newUntitledFile' to open a new untitled file (only opening an empty workspace).
     "workbench.startupEditor": "none",
-    // Specifies the color theme used in the workbench.
-    "workbench.colorTheme": "Default Light+",
-
+    "workbench.colorTheme": "Brackets Light Pro Bold",
     // ------------------------------------------------------------------------
-    // Visual Studio Code: Extensions
+    // Visual Studio Code: Files
+    // ------------------------------------------------------------------------
+    "files.trimTrailingWhitespace": true,
+    // ------------------------------------------------------------------------
+    // Visual Studio Code: SCM & Git
+    // ------------------------------------------------------------------------
+    "scm.diffDecorationsGutterWidth": 5,
+    "diffEditor.ignoreTrimWhitespace": false,
+    "git.path": null,
+    "git.autofetch": true,
+    // ------------------------------------------------------------------------
+    // GitLense
     // ------------------------------------------------------------------------
     "gitlens.advanced.messages": {
         "suppressShowKeyBindingsNotice": true
     },
-    "gitlens.historyExplorer.enabled": true,
-    // Which docstring format to use.
-    "autoDocstring.docstringFormat": "google",
-    // Glob patterns that defines the files to search for. Only include files you need, DO NOT USE `{**/*.*}` for both permormance and avoiding binary files reason.
+    "gitlens.views.fileHistory.enabled": true,
+    "gitlens.views.lineHistory.enabled": true,
+    "gitlens.views.repositories.files.layout": "list",
+    "gitlens.mode.active": "zen",
+    // ------------------------------------------------------------------------
+    // AutoDocstring
+    // ------------------------------------------------------------------------
+    "autoDocstring.docstringFormat": "numpy",
+    "autoDocstring.startOnNewLine": true,
+    // ------------------------------------------------------------------------
+    // ToDo Hightlight
+    // ------------------------------------------------------------------------
     "todohighlight.include": [
         "**/*.js",
         "**/*.jsx",
@@ -75,120 +86,117 @@
             "text": "BUG:",
             "color": "#000000",
             "border": "1px solid #000000",
-            "borderRadius": "3px",
+            "borderRadius": "0px",
             "backgroundColor": "#FF0000",
             "isWholeLine": true,
             "overviewRulerColor": "#FF0000"
         },
         {
-            "text": "TODO:",
+            "text": " TODO: ",
             "color": "#FF0000",
             "border": "1px solid #FF0000",
-            "borderRadius": "3px",
-            "backgroundColor": "rgba(0,0,0,.1)",
+            "borderRadius": "0px",
+            "backgroundColor": "rgba(0,0,0,.03)",
             "isWholeLine": false,
             "overviewRulerColor": "#FF0000"
         },
         {
-            "text": "OPTIMIZE:",
+            "text": " OPTIMIZE: ",
             "color": "#2196f3",
             "border": "1px solid #2196f3",
-            "borderRadius": "3px",
-            "backgroundColor": "rgba(0,0,0,.1)",
+            "borderRadius": "0px",
+            "backgroundColor": "rgba(0,0,0,.03)",
             "isWholeLine": false,
             "overviewRulerColor": "#2196f3"
         },
         {
-            "text": "REFACTOR:",
+            "text": " QUESTION: ",
+            "color": "#2196f3",
+            "border": "1px solid #2196f3",
+            "borderRadius": "0px",
+            "backgroundColor": "rgba(0,0,0,.03)",
+            "isWholeLine": false,
+            "overviewRulerColor": "#2196f3"
+        },
+        {
+            "text": " REFACTOR: ",
             "color": "#760CE8",
             "border": "1px solid #760CE8",
-            "borderRadius": "3px",
-            "backgroundColor": "rgba(0,0,0,.1)",
+            "borderRadius": "0px",
+            "backgroundColor": "rgba(0,0,0,.03)",
             "isWholeLine": false,
             "overviewRulerColor": "#760CE8"
         },
         {
-            "text": "TEST:",
+            "text": " TEST: ",
             "color": "#FF970D",
             "border": "1px solid #FF970D",
-            "borderRadius": "3px",
-            "backgroundColor": "rgba(0,0,0,.1)",
+            "borderRadius": "0px",
+            "backgroundColor": "rgba(0,0,0,.03)",
             "isWholeLine": false,
             "overviewRulerColor": "#FF970D"
         },
         {
-            "text": "DONE:",
+            "text": " DONE: ",
             "color": "#51D800",
             "border": "1px solid #51D800",
-            "borderRadius": "3px",
-            "backgroundColor": "rgba(0,0,0,.1)",
+            "borderRadius": "0px",
+            "backgroundColor": "rgba(0,0,0,.03)",
             "isWholeLine": false,
             "overviewRulerColor": "#51D800"
         },
         {
-            "text": "NOTE:",
+            "text": " NOTE: ",
             "color": "grey",
             "border": "1px solid grey",
-            "borderRadius": "3px",
+            "borderRadius": "0px",
             "backgroundColor": "#FFF60D",
             "isWholeLine": false,
             "overviewRulerColor": "grey"
         },
     ],
-
-    // ------------------------------------------------------------------------
-    // Git
-    // ------------------------------------------------------------------------
-    // Path to the git executable
-    "git.path": null,
-    // Whether auto fetching is enabled
-    "git.autofetch": true,
-
     // ------------------------------------------------------------------------
     // Rust
     // ------------------------------------------------------------------------
-    // When set to true, RLS stderr is logged to a file at workspace root level. Requires reloading extension after change.
     "rust-client.logToFile": false,
-    // Time in milliseconds between receiving a change notification and starting build.
-    "rust.wait_to_build": 1000,
-    // Only index the project when a file is saved and not on change.
     "rust.build_on_save": true,
-    
+    "rust.wait_to_build": null,
+    "rust.full_docs": null,
+    "rust.jobs": 4,
+    "rust.show_hover_context": true,
     // ------------------------------------------------------------------------
     // Python
     // ------------------------------------------------------------------------
-    // Path to Python, you can use a custom version of Python by modifying this setting to include the full path.
-    "python.pythonPath": "",
-    // Path to folder with a list of Virtual Environments (e.g. ~/.pyenv, ~/Envs, ~/.virtualenvs).
-    "python.venvPath": "",
-    // Path to isort script, default using inner version
+    "python.pythonPath": "/Users/tillmannradmer/miniconda3/envs/ml/bin/python",
     "python.sortImports.path": "",
-    // Whether to lint Python files.
-    "python.linting.enabled": false,
-    // Path to Pylint, you can use a custom version of pylint by modifying this setting to include the full path.
-    "python.linting.pylintPath": "pylint",
-    // Arguments passed in. Each argument is a separate item in the array.
+    "python.linting.enabled": true,
     "python.linting.pylintArgs": [
-        // "--jobs=2",
-        // "--disable=E1129",
-        // "--disable=R0903",
-        // "--disable=W0221",
-        // "--disable=E1126",
-        // "--disable=C0103"
-        "--extension-pkg-whitelist=numpy,cntk,tensorflow"
+        // "--indent-string=\"  \"",
+        // "--indent-after-paren=2",
+        "--generated-members=numpy.* ,torch.* ,cv2.* , cv.*"
     ],
-    // Comma delimited list of modules preloaded to speed up Auto Complete (e.g. add Numpy, Pandas, etc, items slow to load when autocompleting).
-    "python.autoComplete.preloadModules": [],
-    // List of paths to libraries and the like that need to be imported by auto complete engine. E.g. when using Google App SDK, the paths are not in system path, hence need to be added into this list.
     "python.autoComplete.extraPaths": [],
-
+    "python.formatting.provider": "autopep8",
+    "python.condaPath": "/Users/tillmannradmer/miniconda3/bin/conda",
+    "python.formatting.autopep8Args": [
+        // "--indent-size=2",
+        "--ignore E121"
+    ],
     // ------------------------------------------------------------------------
     // C#
     // ------------------------------------------------------------------------
-    // The time Visual Studio Code will wait for the OmniSharp server to start. Time is expressed in seconds.
     "omnisharp.projectLoadTimeout": 240,
-    // Specifies the level of logging output from the OmniSharp server.
     "omnisharp.loggingLevel": "warning",
-    // Specifies whether the references CodeLens should be show be shown.
-    "csharp.referencesCodeLens.enabled": false
+    "csharp.referencesCodeLens.enabled": false,
+    "markdown.extension.toc.githubCompatibility": true,
+    "markdown.extension.toc.levels": "2..6",
+    "markdown.extension.toc.orderedList": true,
+    // ------------------------------------------------------------------------
+    // Go
+    // ------------------------------------------------------------------------
+    "go.formatTool": "goimports",
+    "go.useLanguageServer": false,
+    // ------------------------------------------------------------------------
+    // AUTOMATICALLY ADDED FIELDS
+    // ------------------------------------------------------------------------
 }
