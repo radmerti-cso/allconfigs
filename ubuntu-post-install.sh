@@ -111,3 +111,9 @@ echo 'deb [arch=amd64 signed-by=/usr/share/keyrings/signal-desktop-keyring.gpg] 
   sudo tee -a /etc/apt/sources.list.d/signal-xenial.list
 # 3. Update your package database and install signal
 sudo apt update && sudo apt install signal-desktop
+
+# Azure CLI
+curl -sL https://aka.ms/InstallAzureCLIDeb | sudo bash
+
+# exa (replacement for ls)
+sudo apt install exa
