@@ -80,6 +80,9 @@ EOF
 sudo apt install curl
 curl https://pyenv.run | bash
 # pipenv
+sudo apt-get update; sudo apt-get install make build-essential libssl-dev zlib1g-dev \
+libbz2-dev libreadline-dev libsqlite3-dev wget curl llvm \
+libncursesw5-dev xz-utils tk-dev libxml2-dev libxmlsec1-dev libffi-dev liblzma-dev
 pip install --user pipenv
 
 # Docker
@@ -97,6 +100,12 @@ sudo apt update
 sudo apt install docker-ce docker-ce-cli containerd.io
 # Add your user to the docker group.
 sudo usermod -aG docker $USER
+
+# NVIDIA Container Toolkit
+distribution=$(. /etc/os-release;echo $ID$VERSION_ID) \
+   && curl -s -L https://nvidia.github.io/nvidia-docker/gpgkey | sudo apt-key add - \
+   && curl -s -L https://nvidia.github.io/nvidia-docker/$distribution/nvidia-docker.list | sudo tee /etc/apt/sources.list.d/nvidia-docker.list
+
 
 # fira code font
 sudo add-apt-repository universe
