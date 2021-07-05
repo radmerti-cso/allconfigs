@@ -11,11 +11,29 @@ sudo apt install powertop
 # zsh
 sudo apt install zsh
 sudo apt install zsh-syntax-highlighting
+cat >> ~/.zshrc<< EOF
+
+# enable zsh-syntax-highlighting
+source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+EOF
 # make zsh the default shell
 chsh -s $(which zsh)
 # log out and back in
 
-# pure (Pretty, minimal and fast ZSH prompt)
+# starship cross-shell prompt (don't install pure if staship is used)
+# From prebuilt binary, with Shell
+sh -c "$(curl -fsSL https://starship.rs/install.sh)"
+# To update the Starship itself, rerun the above script.
+cat >> ~/.zshrc<< EOF
+
+# starship cross-shell prompt (must run last)
+eval "$(starship init zsh)"
+EOF
+mkdir -p ~/.config && touch ~/.config/starship.toml
+# Terminal Color Palettes (for examples snazzy)
+# https://mayccoll.github.io/Gogh/
+
+# pure (Pretty, minimal and fast ZSH prompt) (don't install starship if pure is used)
 mkdir -p "$HOME/.zsh"
 git clone https://github.com/sindresorhus/pure.git "$HOME/.zsh/pure"
 cat >> ~/.zshrc<< EOF
@@ -38,15 +56,6 @@ zstyle :prompt:pure:git:stash show yes
 zstyle :prompt:pure:execution_time show yes
 prompt pure
 EOF
-
-# zsh-syntax-highlighting
-git clone https://github.com/zsh-users/zsh-syntax-highlighting.git "$HOME/.zsh/zsh-syntax-highlighting"
-cat >> ~/.zshrc<< EOF
-
-source ${(q-)PWD}/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-EOF
-
-# oh-my-zsh
 
 # neofetch (print system information in terminal)
 sudo apt install nofetch
