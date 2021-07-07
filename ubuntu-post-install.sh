@@ -58,7 +58,7 @@ prompt pure
 EOF
 
 # neofetch (print system information in terminal)
-sudo apt install nofetch
+sudo apt install neofetch
 
 # gnome tweaks
 sudo apt install gnome-tweaks
