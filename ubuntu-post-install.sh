@@ -3,6 +3,9 @@
 sudo add-apt-repository ppa:linrunner/tlp
 sudo apt update
 sudo apt install tlp tlp-rdw
+# Bluetooth devices hang, disconnect or do not pair
+# set the followin in /etc/tlp.conf
+# USB_BLACKLIST_BTUSB=1
 sudo tlp start
 
 # powertop (to check if TLP settings are optimal according to Intel)
